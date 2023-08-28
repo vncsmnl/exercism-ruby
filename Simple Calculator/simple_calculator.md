@@ -3,7 +3,7 @@ Exceções em Ruby, como em muitos idiomas, fornecem uma maneira de lidar com ev
 
 Quando uma exceção é levantada, aumentando-a explicitamente ou pelo intérprete Ruby, o programa desvia a operação normal e, eventualmente, sai com uma mensagem de erro:
 
-```
+``` ruby
 raise ArgumentError.new("Something went wrong!")
 => Traceback (most recent call last):
 .
@@ -18,7 +18,7 @@ ZeroDivisionError (divided by 0)
 
 Caso desejemos interromper esse processo de desligamento, precisamos reagir à exceção. Isso é chamado de "resgatando" uma exceção:
 
-```
+``` ruby
 begin
   # ...any code that raises an exception
 rescue
@@ -30,7 +30,7 @@ Este programa não trava e produz "Tem uma exceção". Em vez de sair, Ruby exec
 
 Como tudo no Ruby, as exceções também são objetos e geralmente contêm dados sobre a exceção. É assim que podemos obter o objeto de exceção:
 
-```
+``` ruby
 begin
   # ...any code that raises an exception
 rescue => e
@@ -41,7 +41,7 @@ end
 
 Em Ruby, também é possível levantar suas próprias exceções. Por exemplo:
 
-```
+``` ruby
 begin
   raise ArgumentError.new("Invalid argument")
 rescue ArgumentError => e
@@ -50,7 +50,7 @@ end
 ```
 A exceção anterior é uma das exceções incorporadas do Ruby, mas também é possível definir exceções personalizadas e aumentá-las:
 
-```
+``` ruby
 class CustomError < StandardError
 end
 
@@ -62,7 +62,7 @@ Neste exercício, você estará criando um tratamento de erros para uma calculad
 
 O objetivo é ter uma calculadora de trabalho que retorne uma sequência com o seguinte padrão: 16 + 51 = 67, quando fornecido com argumentos 16, 51 e +.
 
-```
+``` ruby
 SimpleCalculator.calculate(16, 51, "+")
 # => "16 + 51 = 67"
 SimpleCalculator.calculate(32, 6, "*")
@@ -81,7 +81,7 @@ divisão usando o / string
 ## 2. Lidar com operações ilegais
 Atualizar o SimpleCalculator.calculate() método para aumentar um UnsupportedOperation exceção para símbolos de operação desconhecidos.
 
-```
+``` ruby
 SimpleCalculator.calculate(1, 2, '-')
 # => Raises an UnsupportedOperation
 ```
@@ -89,7 +89,7 @@ SimpleCalculator.calculate(1, 2, '-')
 ## 3. Lidar com argumentos inválidos
 Atualizar o SimpleCalculator.calculate() método para aumentar um ArgumentError exceção para tipos de argumentos inválidos.
 
-```
+``` ruby
 SimpleCalculator.calculate(1, '2', '*')
 # => Raises an ArgumentError
 ```
@@ -97,7 +97,17 @@ SimpleCalculator.calculate(1, '2', '*')
 ## 4. Alça as exceções DivideByZero
 Atualizar o SimpleCalculator.calculate() lidar ZeroDivisionError exceções. O código de manuseio deve retornar a sequência com o conteúdo Division by zero is not allowed.. Qualquer outra exceção não deve ser tratada pelo SimpleCalculator.calculate() método.
 
-```
+``` ruby
 SimpleCalculator.calculate(512, 0, "/")
 # => returns "Division by zero is not allowed."
 ```
+
+# Como depurar
+Quando um teste falha, uma mensagem é exibida descrevendo o que deu errado e para qual entrada. Você pode inspecionar valores arbitrários em seu programa passando-os para o debug método. Isso capturará os valores e mostrará a saída.
+
+``` ruby
+debug "The value is #{value}."
+debug "The input is #{input.inspect}"
+```
+
+<div><img align="right" src="../assets/my_machine.png" alt="my_machine" width="200"></div>

@@ -17,3 +17,5 @@ Quando um teste falha, uma mensagem é exibida descrevendo o que deu errado e pa
 debug "The value is #{value}."
 debug "The input is #{input.inspect}"
 ```
+
+<div><img align="right" src="../assets/my_machine.png" alt="my_machine" width="200"></div>

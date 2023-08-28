@@ -94,3 +94,5 @@ BoutiqueInventory.new([
 debug "The value is #{value}."
 debug "The input is #{input.inspect}"
 ```
+
+<div><img align="right" src="../assets/my_machine.png" alt="my_machine" width="200"></div>

@@ -2,7 +2,7 @@
 <h3 align="center">Exercism Ruby Solutions </h3>
 
 <div align="center"> 
-<a href="https://exercism.org/profiles/vncsmnl">Website</a> | 
+<a href="https://exercism.org/profiles/vncsmnl">Website</a>
 </div>
 
 ## Follow Me
